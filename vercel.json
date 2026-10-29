@@ -1,9 +1,11 @@
-﻿{
-  "routes": [
+﻿@'
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
     {
-      "src": "/[^.]+",
-      "dest": "/",
-      "status": 200
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
+'@ | Set-Content -Encoding utf8 .\vercel.json
