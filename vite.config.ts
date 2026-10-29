@@ -11,15 +11,4 @@ export default defineConfig({
       '@': path.resolve(import.meta.dirname, './src'),
     },
   },
-  // Saat `npm run dev`, /api diteruskan ke backend agar browser tidak kena CORS
-  // (di Netlify lewat redirect di netlify.toml). Target bisa diganti lewat env API_PROXY_TARGET.
-  server: {
-    proxy: {
-      '/api': {
-        target: process.env.API_PROXY_TARGET ?? 'https://infra-lab.my.id',
-        changeOrigin: true,
-        secure: false,
-      },
-    },
-  },
 })

@@ -2,13 +2,6 @@
   command = "npm run build"
   publish = "dist"
 
-# API diteruskan ke backend Go, jadi browser tetap satu origin (tidak kena CORS).
-[[redirects]]
-  from = "/api/*"
-  to = "https://infra-lab.my.id/api/:splat"
-  status = 200
-  force = true
-
 # SPA: semua route React (mis. /quick-count/history/xxx) dilayani index.html.
 [[redirects]]
   from = "/*"
