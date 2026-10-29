@@ -1,4 +1,4 @@
-export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? "http://localhost:8080/api"
+export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? "https://infra-lab.my.id/api"
 
 // Sementara belum ada login: user untuk created_by/updated_by dikirim lewat header X-User.
 export const API_USER = import.meta.env.VITE_API_USER ?? ""

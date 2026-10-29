@@ -20,7 +20,7 @@ Variabel `.env`:
 
 | Variabel | Keterangan |
 |---|---|
-| `VITE_API_BASE_URL` | Base URL API backend, mis. `http://localhost:8080/api` |
+| `VITE_API_BASE_URL` | Base URL API backend, mis. `https://infra-lab.my.id/api` (lokal: `http://localhost:8080/api`) |
 | `VITE_API_USER` | (opsional) username yang dikirim sebagai header `X-User` |
 
 ## Struktur
