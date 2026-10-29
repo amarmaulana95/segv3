@@ -20,7 +20,7 @@ Variabel `.env`:
 
 | Variabel | Keterangan |
 |---|---|
-| `VITE_API_BASE_URL` | Base URL API backend, mis. `https://infra-lab.my.id/api` (lokal: `http://localhost:8080/api`) |
+| `VITE_API_BASE_URL` | Base URL API, default `/api` (diteruskan ke backend oleh proxy Vite saat dev & redirect Netlify saat produksi) |
 | `VITE_API_USER` | (opsional) username yang dikirim sebagai header `X-User` |
 
 ## Struktur
@@ -60,3 +60,9 @@ Menu lain (Method, Innovation, Value Eng, dll.) belum tersedia dan menampilkan p
 ## Catatan
 
 - Login belum di-port: user aktif diambil dari `VITE_API_USER` dan dikirim ke backend lewat header `X-User`.
+
+## Deploy (Netlify)
+
+Netlify membangun dari repo ini memakai `netlify.toml`: `/api/*` diteruskan ke backend `https://infra-lab.my.id/api/*`
+(tanpa CORS) dan semua route lain dilayani `index.html`. Saat `npm run dev`, Vite meneruskan `/api` ke backend yang sama;
+ganti dengan env `API_PROXY_TARGET`, mis. `API_PROXY_TARGET=http://localhost:8080 npm run dev`.
